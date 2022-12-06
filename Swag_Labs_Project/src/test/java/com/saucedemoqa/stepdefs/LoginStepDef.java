@@ -1,8 +1,6 @@
 package com.saucedemoqa.stepdefs;
 
 import java.io.IOException;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 

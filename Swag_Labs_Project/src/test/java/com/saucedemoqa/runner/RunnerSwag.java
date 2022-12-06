@@ -8,6 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 		plugin = {"pretty","json:target/cucumber.json"},
 		dryRun = false,
 		monochrome = true
+		
 		)
 		
 public class RunnerSwag extends AbstractTestNGCucumberTests{
