@@ -24,18 +24,23 @@ public class ItemsCheckOutStepDefSwag extends BaseClassSwag{
 	
 	
 	@Given("User click on  the first item")
-	public void user_click_on_the_first_item() throws InterruptedException {
+	public void user_click_on_the_first_item() {
 		ToolsSwag.getExplicitWait(pf.getProduct(), 7);
 		ToolsSwag.clickDynamicElement(driver.findElements(By.xpath("//*[@class='inventory_item_name']")), 0);
-		 Thread.sleep(3000);
+		 try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	@Given("User click on add to cart button")
-	public void user_click_on_add_to_cart_button() throws InterruptedException {
+	public void user_click_on_add_to_cart_button()  {
 	   pf.getAddToCart1().click();
 	  
 	}
 	@Given("User click on Back to product button")
-	public void user_click_on_back_to_product_button() throws InterruptedException {
+	public void user_click_on_back_to_product_button()  {
 		
 		//pf.getBkToProduct1().submit();
 	  driver.navigate().back();
@@ -43,9 +48,14 @@ public class ItemsCheckOutStepDefSwag extends BaseClassSwag{
 	}
 
 	@When("User click on  second item")
-	public void user_click_on_second_item() throws InterruptedException {
+	public void user_click_on_second_item()  {
 		ToolsSwag.clickDynamicElement(driver.findElements(By.xpath("//*[@class='inventory_item_name']")), 1);	
-		  Thread.sleep(3000);
+		  try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	    
 	}
 
@@ -122,6 +132,7 @@ public class ItemsCheckOutStepDefSwag extends BaseClassSwag{
 	public void user_click_on_finish_button() {
 	   
 	    driver.findElement(By.xpath("//*[@id='finish']")).click();
+	    ToolsSwag.takeScreenShot();
 	}
 
 	@Then("User get thanks for order massage")

@@ -53,13 +53,24 @@ public class ToolsSwag extends BaseClassSwag{
 		
 	}
 	
-	public static void takeScreenShot() throws IOException {
+	/*public static void takeScreenShot() throws IOException {
 		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File targetFile = new File(System.getProperty("user.dir")+ "//screenshot.screenshot.png");
 		targetFile.getParentFile().mkdir();
 		srcFile.createNewFile();
 		Files.copy(srcFile, targetFile);
 		
+	}*/
+	public static void takeScreenShot()  {
+		try {
+		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File targetFile = new File(System.getProperty("user.dir")+"//Screenshot/screenshot.png");
+		targetFile.getParentFile().mkdir();
+		srcFile.createNewFile();
+		Files.copy(srcFile, targetFile);
+		} catch (Exception e) {
+			e.getMessage();
+		}
 	}
 	
 	public static void getHighLighter(WebElement element) {
